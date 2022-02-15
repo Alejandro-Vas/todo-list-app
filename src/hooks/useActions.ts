@@ -1,7 +1,11 @@
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 
-const AllActions = {};
+import { todoActions } from "../store/todoSlice/todoSlice";
+
+const AllActions = {
+  ...todoActions,
+};
 
 const useActions = () => {
   const dispatch = useDispatch();
