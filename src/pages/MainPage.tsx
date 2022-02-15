@@ -11,9 +11,9 @@ const MainPage: React.FC = () => {
         </div>
         <h3>This is todo-list with features</h3>
         <ul className="features-list">
-          <li className="features-list_item">add todo</li>
-          <li className="features-list_item">delete todo</li>
-          <li className="features-list_item">edit todo</li>
+          <li className="features-list__item">add todo</li>
+          <li className="features-list__item">delete todo</li>
+          <li className="features-list__item">edit todo</li>
         </ul>
       </div>
     </div>
