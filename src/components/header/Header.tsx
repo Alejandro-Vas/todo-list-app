@@ -1,10 +1,6 @@
 import React from "react";
 
 const Header: React.FC = () => {
-  return (
-    <div>
-      <h1>THE BEST TODO LIST</h1>
-    </div>
-  );
+  return <h1 className="header-text">THE BEST EVER TODO LIST</h1>;
 };
 export default Header;
