@@ -28,7 +28,7 @@ const TodoItem: React.FC<IProps> = (props) => {
   let element;
   if (editing) {
     element = (
-      <li>
+      <li className="todo-item">
         <TodoTextInput
           text={todo.title}
           editing={editing}
@@ -39,7 +39,7 @@ const TodoItem: React.FC<IProps> = (props) => {
     );
   } else {
     element = (
-      <li className="view">
+      <li className="view todo-item">
         <span onDoubleClick={handleDoubleClick}>{todo.title}</span>
         <button className="destroy" onClick={() => deleteTodo(todo.id)}>
           x

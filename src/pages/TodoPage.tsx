@@ -18,7 +18,7 @@ const TodoPage = () => {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 10,
+    contentPerPage: 15,
     count: todo.length,
   });
 
@@ -29,7 +29,7 @@ const TodoPage = () => {
       <div>
         <TodoTextInput
           newTodo
-          placeholder="Add the todo and press Enter..."
+          placeholder="Add a todo and press Enter..."
           onSave={(title) => {
             if (title.length !== 0) {
               addTodo({

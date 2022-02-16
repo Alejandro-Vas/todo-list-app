@@ -7,7 +7,7 @@ import axios from "axios";
 import NavBar from "components/navBar/NavBar";
 import Header from "components/header/Header";
 
-import "./App.scss";
+
 
 const App: React.FC = () => {
   const { setInitTodo } = useActions();

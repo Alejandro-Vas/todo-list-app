@@ -4,7 +4,6 @@ import logo from "../resources/img/logo.png";
 const MainPage: React.FC = () => {
   return (
     <div>
-      <h2>Main Page</h2>
       <div>
         <div>
           <img src={logo} alt="app-logo" />

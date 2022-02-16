@@ -1,3 +1,5 @@
+@import "../../styles/variabales.scss";
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -7,7 +9,7 @@
   overflow: hidden;
   background-color: #333;
   &__item {
-    font-size: 26px;
+    font-size: 28px;
     display: block;
     color: white;
     text-align: center;

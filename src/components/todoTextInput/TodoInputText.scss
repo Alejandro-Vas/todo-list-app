@@ -1,0 +1,25 @@
+@import "../../styles/variabales.scss";
+
+.new-todo-input {
+  width: 60%;
+  font-size: 25px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 15px;
+  &:focus {
+    border: none !important;
+    border: 5px solid red;
+  }
+}
+
+.editing {
+  width: 60%;
+  font-size: 18px;
+  padding: 10px 16px;
+  margin: 6px 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 15px;
+}

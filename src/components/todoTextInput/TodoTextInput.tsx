@@ -30,7 +30,7 @@ const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
   };
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!newTodo && e.target.value !== "") {
+    if (!newTodo) {
       onSave(e.target.value);
     }
   };
@@ -38,8 +38,8 @@ const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
   return (
     <input
       className={classnames({
-        edit: editing,
-        "new-todo": newTodo,
+        editing: editing,
+        "new-todo-input": newTodo,
       })}
       type="text"
       placeholder={placeholder}
