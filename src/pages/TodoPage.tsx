@@ -26,13 +26,6 @@ const TodoPage = () => {
 
   const randomId = Math.random() * 5000;
 
-  const newTodo = {
-    userId: 1,
-    id: randomId,
-    title: "fugiat veniam minus " + randomId,
-    completed: false,
-  };
-
   return (
     <div>
       <div>

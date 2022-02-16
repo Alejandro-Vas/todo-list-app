@@ -12,7 +12,6 @@ interface ITodoTextInput {
 
 const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
   const { placeholder, editing, newTodo, onSave } = props;
-  const { addTodo } = useActions();
 
   const [todoText, setTodoText] = useState("");
 

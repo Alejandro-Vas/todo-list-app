@@ -1,5 +1,6 @@
 import classnames from "classnames";
 import TodoTextInput from "components/todoTextInput/TodoTextInput";
+import useActions from "hooks/useActions";
 import { useState } from "react";
 import { ITodo } from "../../interfaces/ITodo";
 
@@ -9,8 +10,8 @@ interface IProps {
 
 const TodoItem: React.FC<IProps> = (props) => {
   const { todo } = props;
-
   const [editing, setEditing] = useState(false);
+  const { deleteTodo } = useActions();
 
   const handleDoubleClick = () => {
     setEditing(true);
