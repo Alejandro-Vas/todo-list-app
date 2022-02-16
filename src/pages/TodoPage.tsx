@@ -3,6 +3,7 @@ import { useTypedSelector } from "hooks/useTypedSelector";
 import usePagination from "hooks/usePagination";
 import Pagination from "components/pagination/Pagination";
 import TodoTextInput from "components/todoTextInput/TodoTextInput";
+import TodoItem from "components/todoItem/TodoItem";
 
 const TodoPage = () => {
   const { addTodo } = useActions();
@@ -38,22 +39,32 @@ const TodoPage = () => {
         <h2>Todo Page</h2>
       </div>
       <div>
-        <TodoTextInput newTodo placeholder="What needs to be done?" />
+        <TodoTextInput
+          newTodo
+          placeholder="What needs to be done?"
+          onSave={(title) => {
+            if (title.length !== 0) {
+              addTodo({
+                userId: randomId,
+                id: randomId,
+                title: title,
+                completed: false,
+              });
+            }
+          }}
+        />
       </div>
       <div>
         {todo.slice(firstContentIndex, lastContentIndex).map((todo) => {
           return (
             <>
-              <div key={todo.id}>{todo.title}</div>
+              <TodoItem todo={todo} />
               <hr />
             </>
           );
         })}
       </div>
       <div>
-        <button onClick={() => addTodo(newTodo)} type="button">
-          Add todo
-        </button>
         <Pagination
           nextPage={nextPage}
           prevPage={prevPage}

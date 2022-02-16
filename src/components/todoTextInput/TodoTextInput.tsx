@@ -7,17 +7,18 @@ interface ITodoTextInput {
   placeholder?: string;
   editing?: boolean;
   newTodo?: boolean;
+  onSave: (title: string) => void;
 }
 
 const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
-  const { placeholder, editing, newTodo } = props;
+  const { placeholder, editing, newTodo, onSave } = props;
   const { addTodo } = useActions();
 
-  const [todoText, setTodoText] = useState(placeholder);
+  const [todoText, setTodoText] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     const text = e.target.value.trim();
-    if (e.which === 13) {
+    if (e.which === 13 && text.length !== 0) {
       onSave(text);
       if (newTodo) {
         setTodoText("");
@@ -25,25 +26,25 @@ const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTodoText(e.target.value);
   };
 
-  const handleBlur = (e) => {
-    if (!newTodo) {
+  const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!newTodo && e.target.value !== "") {
       onSave(e.target.value);
     }
   };
 
-  const onSave = (newText: string) => {
-    const randomId = Math.random() * 5000;
-    addTodo({
-      userId: randomId,
-      id: randomId,
-      title: newText,
-      completed: false,
-    });
-  };
+  //   const onSave = (newText: string) => {
+  //     const randomId = Math.random() * 5000;
+  //     addTodo({
+  //       userId: randomId,
+  //       id: randomId,
+  //       title: newText,
+  //       completed: false,
+  //     });
+  //   };
 
   return (
     <input
