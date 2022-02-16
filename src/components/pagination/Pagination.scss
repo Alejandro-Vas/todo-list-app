@@ -28,4 +28,13 @@
   border: solid 0.15rem $black-soft;
   border-radius: 0.8rem;
   cursor: pointer;
+  &.active {
+    background-color: $black-soft;
+    color: white;
+  }
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 }
