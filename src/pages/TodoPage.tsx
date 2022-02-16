@@ -22,19 +22,14 @@ const TodoPage = () => {
     count: todo.length,
   });
 
-  console.log("todo from selector", todo);
-
   const randomId = Math.random() * 5000;
 
   return (
     <div>
       <div>
-        <h2>Todo Page</h2>
-      </div>
-      <div>
         <TodoTextInput
           newTodo
-          placeholder="What needs to be done?"
+          placeholder="Add the todo and press Enter..."
           onSave={(title) => {
             if (title.length !== 0) {
               addTodo({

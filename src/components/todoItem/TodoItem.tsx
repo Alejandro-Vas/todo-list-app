@@ -42,7 +42,7 @@ const TodoItem: React.FC<IProps> = (props) => {
       <li className="view">
         <span onDoubleClick={handleDoubleClick}>{todo.title}</span>
         <button className="destroy" onClick={() => deleteTodo(todo.id)}>
-          X
+          x
         </button>
       </li>
     );

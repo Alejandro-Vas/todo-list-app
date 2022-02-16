@@ -2,16 +2,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
-    <div className="nav-link">
-      <li className="nav-link__item">
-        <NavLink to="/">Main Page</NavLink>
-      </li>
-      <li className="nav-link__item">
-        <NavLink className="nav-link__item" to="/todo">
-          Todo Page
+    <ul className="nav-link">
+      <li>
+        <NavLink className="nav-link__item" to="/">
+          Main page
         </NavLink>
       </li>
-    </div>
+      <li>
+        <NavLink className="nav-link__item" to="/todo">
+          Todo page
+        </NavLink>
+      </li>
+    </ul>
   );
 };
 export default NavBar;
