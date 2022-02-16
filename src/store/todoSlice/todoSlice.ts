@@ -20,8 +20,15 @@ const todoSlice = createSlice({
       };
       state.push(newTodo);
     },
-    deleteTodo(state, action: any) {
+    deleteTodo(state, action) {
       return state.filter((todo) => todo.id !== action.payload);
+    },
+    editTodo(state, action) {
+      return state.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, title: action.payload.title }
+          : todo
+      );
     },
   },
 });

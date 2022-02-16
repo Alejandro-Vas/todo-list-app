@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useActions from "hooks/useActions";
 import classnames from "classnames";
 
 interface ITodoTextInput {
@@ -8,16 +7,17 @@ interface ITodoTextInput {
   editing?: boolean;
   newTodo?: boolean;
   onSave: (title: string) => void;
+  onBlur?: (title: string) => void;
 }
 
 const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
-  const { placeholder, editing, newTodo, onSave } = props;
+  const { placeholder, editing, newTodo, onSave, text } = props;
 
-  const [todoText, setTodoText] = useState("");
+  const [todoText, setTodoText] = useState(text);
 
   const handleSubmit = (e: any) => {
     const text = e.target.value.trim();
-    if (e.which === 13 && text.length !== 0) {
+    if (e.which === 13) {
       onSave(text);
       if (newTodo) {
         setTodoText("");
@@ -34,16 +34,6 @@ const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
       onSave(e.target.value);
     }
   };
-
-  //   const onSave = (newText: string) => {
-  //     const randomId = Math.random() * 5000;
-  //     addTodo({
-  //       userId: randomId,
-  //       id: randomId,
-  //       title: newText,
-  //       completed: false,
-  //     });
-  //   };
 
   return (
     <input

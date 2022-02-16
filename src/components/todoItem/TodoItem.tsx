@@ -1,4 +1,3 @@
-import classnames from "classnames";
 import TodoTextInput from "components/todoTextInput/TodoTextInput";
 import useActions from "hooks/useActions";
 import { useState } from "react";
@@ -11,17 +10,17 @@ interface IProps {
 const TodoItem: React.FC<IProps> = (props) => {
   const { todo } = props;
   const [editing, setEditing] = useState(false);
-  const { deleteTodo } = useActions();
+  const { deleteTodo, editTodo } = useActions();
 
   const handleDoubleClick = () => {
     setEditing(true);
   };
 
-  const handleSave = (id, title) => {
+  const handleSave = (id: number, title: string) => {
     if (title.length === 0) {
       deleteTodo(id);
     } else {
-      editTodo(id, title);
+      editTodo({ id, title });
     }
     setEditing(false);
   };
@@ -29,30 +28,27 @@ const TodoItem: React.FC<IProps> = (props) => {
   let element;
   if (editing) {
     element = (
-      <TodoTextInput
-        text={todo.title}
-        editing={editing}
-        onSave={(title) => handleSave(todo.id, title)}
-      />
+      <li>
+        <TodoTextInput
+          text={todo.title}
+          editing={editing}
+          onSave={(title) => handleSave(todo.id, title)}
+          onBlur={(title) => handleSave(todo.id, title)}
+        />
+      </li>
     );
   } else {
     element = (
-      <div className="view">
+      <li className="view">
         <span onDoubleClick={handleDoubleClick}>{todo.title}</span>
-        <button className="destroy" onClick={() => deleteTodo(todo.id)} />
-      </div>
+        <button className="destroy" onClick={() => deleteTodo(todo.id)}>
+          X
+        </button>
+      </li>
     );
   }
 
-  return (
-    <li
-      className={classnames({
-        editing: editing,
-      })}
-    >
-      {element}
-    </li>
-  );
+  return <>{element}</>;
 };
 
 export default TodoItem;
