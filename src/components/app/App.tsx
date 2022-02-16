@@ -7,8 +7,6 @@ import axios from "axios";
 import NavBar from "components/navBar/NavBar";
 import Header from "components/header/Header";
 
-
-
 const App: React.FC = () => {
   const { setInitTodo } = useActions();
   useEffect(() => {
@@ -20,7 +18,7 @@ const App: React.FC = () => {
   }, [setInitTodo]);
 
   return (
-    <>
+    <div className="app">
       <div className="container">
         <Header />
         <Router>
@@ -34,7 +32,7 @@ const App: React.FC = () => {
           </div>
         </Router>
       </div>
-    </>
+    </div>
   );
 };
 
