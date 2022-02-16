@@ -44,7 +44,7 @@ const TodoTextInput: React.FC<ITodoTextInput> = (props) => {
       type="text"
       placeholder={placeholder}
       autoFocus={true}
-      value={todoText}
+      value={todoText || ""}
       onBlur={handleBlur}
       onChange={handleChange}
       onKeyDown={handleSubmit}

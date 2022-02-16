@@ -1,3 +1,15 @@
+.description {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  &__item {
+    font-size: 1.75rem;
+    &_img {
+      margin-top: 20px;
+    }
+  }
+}
+
 .features-list__item {
   list-style: square;
 }

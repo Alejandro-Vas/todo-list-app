@@ -1,3 +1,42 @@
 .todo-item {
   list-style: none;
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete {
+  overflow: hidden;
+  position: relative;
+  border: none;
+  padding: 0;
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  background: transparent;
+  font: inherit;
+  text-indent: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(29, 161, 142, 0.1);
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 0.0625rem);
+    width: 0.1rem;
+    height: 70%;
+    border-radius: 0.125rem;
+    transform: rotate(45deg);
+    background: currentcolor;
+    content: "";
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
 }

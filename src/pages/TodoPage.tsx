@@ -22,7 +22,7 @@ const TodoPage = () => {
     count: todo.length,
   });
 
-  const randomId = Math.random() * 5000;
+  const randomId = Math.random() * 500;
 
   return (
     <div>
@@ -42,13 +42,13 @@ const TodoPage = () => {
           }}
         />
       </div>
-      <div>
+      <div className="todo">
         {todo.slice(firstContentIndex, lastContentIndex).map((todo) => {
           return (
-            <>
+            <div key={todo.id}>
               <TodoItem todo={todo} />
               <hr />
-            </>
+            </div>
           );
         })}
       </div>
