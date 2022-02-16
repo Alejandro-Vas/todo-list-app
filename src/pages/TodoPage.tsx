@@ -23,10 +23,12 @@ const TodoPage = () => {
 
   console.log("todo from selector", todo);
 
+  const randomId = Math.random() * 5000;
+
   const newTodo = {
     userId: 1,
-    id: Math.random() * 5000,
-    title: "fugiat veniam minus",
+    id: randomId,
+    title: "fugiat veniam minus " + randomId,
     completed: false,
   };
 
@@ -37,7 +39,12 @@ const TodoPage = () => {
       </div>
       <div>
         {todo.slice(firstContentIndex, lastContentIndex).map((todo) => {
-          return <div key={todo.id + todo.title}>{todo.id}</div>;
+          return (
+            <>
+              <div key={todo.id}>{todo.title}</div>
+              <hr />
+            </>
+          );
         })}
       </div>
       <div>
