@@ -2,11 +2,11 @@ import useActions from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import usePagination from "hooks/usePagination";
 import Pagination from "components/pagination/Pagination";
+import TodoTextInput from "components/todoTextInput/TodoTextInput";
 
 const TodoPage = () => {
   const { addTodo } = useActions();
   const todo = useTypedSelector((state) => state.todo);
-  console.log(todo);
 
   const {
     firstContentIndex,
@@ -36,6 +36,9 @@ const TodoPage = () => {
     <div>
       <div>
         <h2>Todo Page</h2>
+      </div>
+      <div>
+        <TodoTextInput newTodo placeholder="What needs to be done?" />
       </div>
       <div>
         {todo.slice(firstContentIndex, lastContentIndex).map((todo) => {
