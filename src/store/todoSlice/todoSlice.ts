@@ -8,6 +8,9 @@ const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
+    setInitTodo(state, action) {
+      state.push(...action.payload);
+    },
     addTodo(state, action: PayloadAction<ITodo>) {
       const newTodo = {
         userId: action.payload.userId,

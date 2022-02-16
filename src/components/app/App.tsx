@@ -10,14 +10,14 @@ import Header from "components/header/Header";
 import "./App.scss";
 
 const App: React.FC = () => {
-  
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axios("https://jsonplaceholder.typicode.com/todos");
-  //     setInitTodo(result.data);
-  //   };
-  //   fetchData();
-  // }, [setInitTodo]);
+  const { setInitTodo } = useActions();
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios("https://jsonplaceholder.typicode.com/todos");
+      setInitTodo(result.data);
+    };
+    fetchData();
+  }, [setInitTodo]);
 
   return (
     <>
