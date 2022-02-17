@@ -1,9 +1,20 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .description {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   &__item {
     font-size: 1.5rem;
+
+    &_header {
+      @media screen and (max-width: 800px) {
+        font-size: 1.25rem;
+      }
+    }
     &_img {
       margin-top: 20px;
     }
@@ -12,4 +23,7 @@
 
 .features-list__item {
   list-style: square;
+  @media screen and (max-width: 800px) {
+    font-size: 1rem;
+  }
 }

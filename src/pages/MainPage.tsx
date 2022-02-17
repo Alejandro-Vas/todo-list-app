@@ -4,7 +4,9 @@ const MainPage: React.FC = () => {
   return (
     <div className="description">
       <div className="description__item ">
-        <h2>APP FEATURES</h2>
+        <h2 className="description__item description__item_header">
+          APP FEATURES
+        </h2>
         <ul className="features-list">
           <li className="features-list__item">
             Loading data from JSONPlaceholder
