@@ -30,6 +30,13 @@ const todoSlice = createSlice({
           : todo
       );
     },
+    completeTodo(state, action) {
+      return state.map((todo) =>
+        todo.id === action.payload
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+    },
   },
 });
 

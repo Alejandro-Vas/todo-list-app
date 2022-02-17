@@ -10,7 +10,7 @@ interface IProps {
 const TodoItem: React.FC<IProps> = (props) => {
   const { todo } = props;
   const [editing, setEditing] = useState(false);
-  const { deleteTodo, editTodo } = useActions();
+  const { deleteTodo, editTodo, completeTodo } = useActions();
 
   const handleDoubleClick = () => {
     setEditing(true);
@@ -33,17 +33,21 @@ const TodoItem: React.FC<IProps> = (props) => {
           text={todo.title}
           editing={editing}
           onSave={(title) => handleSave(todo.id, title)}
-          onBlur={(title) => handleSave(todo.id, title)}
+          onBlur={(title) => handleSave(todo.id, title)}  
         />
       </li>
     );
   } else {
     element = (
       <li className="view todo-item">
+        <input
+          className="toggle"
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => completeTodo(todo.id)}
+        />
         <span onDoubleClick={handleDoubleClick}>{todo.title}</span>
-        <button className="delete" onClick={() => deleteTodo(todo.id)}>
-          x
-        </button>
+        <button className="delete" onClick={() => deleteTodo(todo.id)}></button>
       </li>
     );
   }
