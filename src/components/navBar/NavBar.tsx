@@ -1,6 +1,5 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-const NavBar = () => {
+const NavBar: React.FC = () => {
   return (
     <ul className="nav-link">
       <li>

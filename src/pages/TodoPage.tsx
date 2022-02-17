@@ -5,7 +5,7 @@ import Pagination from "components/pagination/Pagination";
 import TodoTextInput from "components/todoTextInput/TodoTextInput";
 import TodoItem from "components/todoItem/TodoItem";
 
-const TodoPage = () => {
+const TodoPage: React.FC = () => {
   const { addTodo } = useActions();
   const todo = useTypedSelector((state) => state.todo);
 

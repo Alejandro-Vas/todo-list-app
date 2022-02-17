@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../resources/img/logo.png";
 
 const MainPage: React.FC = () => {
