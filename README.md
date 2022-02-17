@@ -19,7 +19,14 @@ git clone https://github.com/Alejandro-Vas/todo-list-app.git
 cd todo-list-app
 npm i
 npm start
+
 ```
+---
+#### DEPLOYMENT
+https://thebest-todo-list.herokuapp.com
+
+
+
 
 ---
 
@@ -33,3 +40,4 @@ npm start
 - ReactJS
 - Redux / Redux-Toolkit
 - React-router
+
