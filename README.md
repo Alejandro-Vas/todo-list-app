@@ -2,7 +2,7 @@
 
 ## Project made using JavaScript, TypeScript, React and Redux.
 
-#### MAIN PAGE DEMO SCREENSHOT
+#### DEMO SCREENSHOT
 
 <img src="https://github.com/Alejandro-Vas/todo-list-app/blob/master/src/appScreenshotResize.png?raw=true" alt="main page screenshot"/>
 
