@@ -16,11 +16,13 @@
 }
 
 .editing {
-  width: 60%;
-  font-size: 18px;
-  padding: 10px 16px;
-  margin: 6px 0;
+  width: 800px;
+  height: fit-content;
+  color: red;
+  font-size: 25px;
+  padding: 2px;
+  margin: 6px 6px 6px 6px;
   box-sizing: border-box;
   border: 1px solid;
-  border-radius: 15px;
+  border-radius: 10px;
 }

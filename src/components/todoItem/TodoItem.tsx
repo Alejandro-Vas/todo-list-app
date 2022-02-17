@@ -29,6 +29,12 @@ const TodoItem: React.FC<IProps> = (props) => {
   if (editing) {
     element = (
       <li className="todo-item">
+        <input
+          className="toggle"
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => completeTodo(todo)}
+        />
         <TodoTextInput
           text={todo.title}
           editing={editing}
@@ -39,14 +45,14 @@ const TodoItem: React.FC<IProps> = (props) => {
     );
   } else {
     element = (
-      <li className="view todo-item">
+      <li className="todo-item" onDoubleClick={handleDoubleClick}>
         <input
           className="toggle"
           type="checkbox"
           checked={todo.completed}
           onChange={() => completeTodo(todo)}
         />
-        <span onDoubleClick={handleDoubleClick}>{todo.title}</span>
+        <span>{todo.title}</span>
         <button className="delete" onClick={() => deleteTodo(todo.id)}></button>
       </li>
     );
