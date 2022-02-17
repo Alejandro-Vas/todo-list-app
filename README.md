@@ -16,7 +16,7 @@
 
 ```
 git clone https://github.com/Alejandro-Vas/todo-list-app.git
-cd weather-app
+cd todo-list-app
 npm i
 npm start
 ```
@@ -33,5 +33,3 @@ npm start
 - ReactJS
 - Redux / Redux-Toolkit
 - React-router
-
----
