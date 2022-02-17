@@ -18,7 +18,7 @@ const TodoPage: React.FC = () => {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 15,
+    contentPerPage: 20,
     count: todo.length,
   });
 
@@ -26,7 +26,7 @@ const TodoPage: React.FC = () => {
 
   return (
     <div>
-      <div>
+      <div className="new-todo-input-section fade-in">
         <TodoTextInput
           newTodo
           placeholder="Add a todo and press Enter..."
@@ -45,9 +45,9 @@ const TodoPage: React.FC = () => {
       <div className="todo">
         {todo.slice(firstContentIndex, lastContentIndex).map((todo) => {
           return (
-            <div key={todo.id}>
+            <div key={todo.id} className="fade-in">
               <TodoItem todo={todo} />
-              <hr />
+              <hr className="hr" />
             </div>
           );
         })}

@@ -1,5 +1,6 @@
 @import "../../styles/variabales.scss";
 .todo-item {
+  height: 25px;
   list-style: none;
   font-size: 1.75rem;
   display: flex;
@@ -44,8 +45,8 @@
 
 .toggle {
   margin-right: 10px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   transition: box-shadow 0.3s;
   background: lightgrey;
