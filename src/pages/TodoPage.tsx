@@ -18,7 +18,7 @@ const TodoPage: React.FC = () => {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 20,
+    contentPerPage: 15,
     count: todo.length,
   });
 
