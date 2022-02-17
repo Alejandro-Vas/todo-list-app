@@ -18,7 +18,7 @@ const TodoPage: React.FC = () => {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 15,
+    contentPerPage: 10,
     count: todo.length,
   });
 
@@ -52,15 +52,17 @@ const TodoPage: React.FC = () => {
           );
         })}
       </div>
-      <div>
-        <Pagination
-          nextPage={nextPage}
-          prevPage={prevPage}
-          page={page}
-          setPage={setPage}
-          totalPages={totalPages}
-        />
-      </div>
+      {todo.length !== 0 ? (
+        <div>
+          <Pagination
+            nextPage={nextPage}
+            prevPage={prevPage}
+            page={page}
+            setPage={setPage}
+            totalPages={totalPages}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

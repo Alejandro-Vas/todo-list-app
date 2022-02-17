@@ -11,7 +11,9 @@ const App: React.FC = () => {
   const { setInitTodo } = useActions();
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("https://jsonplaceholder.typicode.com/todos");
+      const result = await axios(
+        "https://jsonplaceholder.typicode.com/todos?_limit=20"
+      );
       setInitTodo(result.data);
     };
     fetchData();
