@@ -33,7 +33,7 @@ const TodoItem: React.FC<IProps> = (props) => {
           text={todo.title}
           editing={editing}
           onSave={(title) => handleSave(todo.id, title)}
-          onBlur={(title) => handleSave(todo.id, title)}  
+          onBlur={(title) => handleSave(todo.id, title)}
         />
       </li>
     );
@@ -44,7 +44,7 @@ const TodoItem: React.FC<IProps> = (props) => {
           className="toggle"
           type="checkbox"
           checked={todo.completed}
-          onChange={() => completeTodo(todo.id)}
+          onChange={() => completeTodo(todo)}
         />
         <span onDoubleClick={handleDoubleClick}>{todo.title}</span>
         <button className="delete" onClick={() => deleteTodo(todo.id)}></button>

@@ -30,9 +30,9 @@ const todoSlice = createSlice({
           : todo
       );
     },
-    completeTodo(state, action) {
+    completeTodo(state, action: PayloadAction<ITodo>) {
       return state.map((todo) =>
-        todo.id === action.payload
+        todo.id === action.payload.id
           ? { ...todo, completed: !todo.completed }
           : todo
       );
