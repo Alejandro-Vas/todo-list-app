@@ -23,7 +23,7 @@ const TodoPage: React.FC = () => {
     count: todo.length,
   });
 
-  const randomId = Math.floor(Math.random() * 100 ** 5);  
+  const randomId = Math.floor(Math.random() * 100 ** 5);
 
   return (
     <div>
