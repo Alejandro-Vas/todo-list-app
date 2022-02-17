@@ -8,6 +8,7 @@ import TodoItem from "components/todoItem/TodoItem";
 const TodoPage: React.FC = () => {
   const { addTodo } = useActions();
   const todo = useTypedSelector((state) => state.todo);
+  const contentPerPage = 10;
 
   const {
     firstContentIndex,
@@ -18,7 +19,7 @@ const TodoPage: React.FC = () => {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 10,
+    contentPerPage: contentPerPage,
     count: todo.length,
   });
 
@@ -52,7 +53,7 @@ const TodoPage: React.FC = () => {
           );
         })}
       </div>
-      {todo.length !== 0 ? (
+      {todo.length > contentPerPage ? (
         <div>
           <Pagination
             nextPage={nextPage}
