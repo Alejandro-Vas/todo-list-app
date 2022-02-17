@@ -2,6 +2,12 @@
 
 ## Project made using JavaScript, TypeScript, React and Redux.
 
+#### MAIN PAGE DEMO SCREENSHOT
+
+<img src="https://github.com/Alejandro-Vas/todo-list-app/blob/master/src/appScreenshotResize.png?raw=true" alt="main page screenshot"/>
+
+---
+
 #### APP FEATURES:
 
 - Loading data from JSONPlaceholder
@@ -21,12 +27,12 @@ npm i
 npm start
 
 ```
+
 ---
+
 #### DEPLOYMENT
+
 https://thebest-todo-list.herokuapp.com
-
-
-
 
 ---
 
@@ -40,4 +46,3 @@ https://thebest-todo-list.herokuapp.com
 - ReactJS
 - Redux / Redux-Toolkit
 - React-router
-
