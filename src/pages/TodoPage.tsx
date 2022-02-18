@@ -53,7 +53,7 @@ const TodoPage: React.FC = () => {
           );
         })}
       </div>
-      {todo.length > 0 || todo.length > contentPerPage ? (
+      {todo.length > 0 ? (
         <div>
           <Pagination
             nextPage={nextPage}

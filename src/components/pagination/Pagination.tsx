@@ -16,8 +16,8 @@ const Pagination: React.FC<IProps> = (props) => {
       <button onClick={prevPage} className={`page ${page === 1 && "disabled"}`}>
         &larr;
       </button>
-      {/* @ts-ignore */}
-      {[...Array(totalPages).keys()].map((el) => (
+
+      {Array.from(Array(totalPages).keys()).map((el) => (
         <button
           onClick={() => setPage(el + 1)}
           key={el}
