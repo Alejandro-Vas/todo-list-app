@@ -53,7 +53,12 @@ const TodoItem: React.FC<IProps> = (props) => {
           onChange={() => completeTodo(todo)}
         />
         <span>{todo.title}</span>
-        <button className="delete" onClick={() => deleteTodo(todo.id)}></button>
+        <div className="delete-wrapper">
+          <button
+            className="delete"
+            onClick={() => deleteTodo(todo.id)}
+          ></button>
+        </div>
       </li>
     );
   }

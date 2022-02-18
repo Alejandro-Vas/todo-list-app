@@ -5,6 +5,13 @@
   font-size: 1.75rem;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 400px) {
+    font-size: 1.25rem;
+  }
+}
+
+.delete-wrapper {
+  margin-left: auto;
 }
 
 .delete {
@@ -20,6 +27,10 @@
   font: inherit;
   text-indent: 100%;
   cursor: pointer;
+  @media screen and (max-width: 400px) {
+    width: 2rem;
+    height: 2rem;
+  }
 
   &:hover {
     background: rgba(29, 161, 142, 0.1);
